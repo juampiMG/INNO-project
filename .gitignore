@@ -1,0 +1,41 @@
+# Signing credentials
+signing.properties
+
+# Gradle
+.gradle
+gradle/
+gradlew
+gradlew.bat
+
+# IntelliJ IDEA / Android Studio
+.idea/
+*/.idea/
+*.iml
+/app/local.properties
+local.properties
+build/
+
+
+# Crashlytics
+app/src/main/res/values/com_crashlytics_export_strings.xml
+crashlytics-build.properties
+
+# Built application files
+*.apk
+*.ap_
+
+
+# Files for the ART/Dalvik VM
+*.dex
+
+# Java class files
+*.class
+
+# Generated files
+/app/bin/
+/app/gen/
+/app/out/
+
+# Log Files
+*.log
+
