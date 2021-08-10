@@ -1,6 +1,6 @@
 package com.jp.data.network.gateway.retrofit
 
-import com.jp.data.entity.sample.User
+import com.jp.data.entity.User
 import com.jp.data.network.gateway.IAppGateway
 import com.jp.data.preferences.URLPreferenceManager
 import com.jp.data.network.gateway.retrofit.service.IRestServices

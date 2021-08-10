@@ -1,6 +1,6 @@
 package com.jp.data.network.gateway.retrofit.service
 
-import com.jp.data.entity.sample.User
+import com.jp.data.entity.User
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Url

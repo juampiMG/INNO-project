@@ -1,9 +1,8 @@
-package com.jp.domain.model
+package com.jp.data.entity
 
 import org.joda.time.DateTime
-import java.util.*
 
-class UserDomain {
+class User {
     var id: Int = 0 // database entity
     var name: String = ""
     var birthdate: DateTime = DateTime.now()

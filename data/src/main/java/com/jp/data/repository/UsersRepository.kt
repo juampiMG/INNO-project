@@ -14,6 +14,8 @@ constructor(private val mGateway: IAppGateway) : IUsersRepository {
     internal lateinit var mUserMapper: UserMapper
 
     override fun getUsers(): Single<List<UserDomain>> {
-        return mGateway.getUsers().flatMap { resultEntities -> Single.just(mUserMapper.transform(resultEntities)) }
+        return mGateway.getUsers().flatMap { resultEntities ->
+            Single.just(mUserMapper.transform(resultEntities))
+        }
     }
 }

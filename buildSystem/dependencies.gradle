@@ -97,6 +97,7 @@ ext {
                             "com.google.dagger:hilt-android:$ext.hiltVersion",
                             "io.reactivex.rxjava2:rxandroid:$reactiveAndroidVersion",
                             "io.reactivex.rxjava2:rxkotlin:${reactiveKotlinVersion}",
+                            "joda-time:joda-time:$jodaTimeVersion",
                             "org.modelmapper:modelmapper:$modelmapperVersion"
                     ],
                     implementationTransitive : [
@@ -140,6 +141,7 @@ ext {
                             "org.glassfish:javax.annotation:$javaxAnnotationVersion",
                             "org.modelmapper:modelmapper:$modelmapperVersion",
                             "com.amitshekhar.android:rx2-android-networking:$rx2FastAndroidNetworking",
+                            "joda-time:joda-time:$jodaTimeVersion"
                     ],
                     implementationTransitive : [
 

@@ -1,6 +1,6 @@
 package com.jp.data.entity.mapper
 
-import com.jp.data.entity.sample.User
+import com.jp.data.entity.User
 import com.jp.domain.model.UserDomain
 import javax.inject.Inject
 import javax.inject.Singleton

@@ -1,6 +1,6 @@
 package com.jp.data.network.gateway
 
-import com.jp.data.entity.sample.User
+import com.jp.data.entity.User
 import io.reactivex.Single
 
 
