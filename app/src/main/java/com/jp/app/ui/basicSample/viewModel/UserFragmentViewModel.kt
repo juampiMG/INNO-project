@@ -3,27 +3,32 @@ package com.jp.app.ui.basicSample.viewModel
 import androidx.lifecycle.MutableLiveData
 import com.jp.app.common.viewModel.BaseFragmentViewModel
 import com.jp.app.helper.subscribeSingle
-import com.jp.domain.interactor.IGetSampleUseCase
+import com.jp.app.model.UserView
+import com.jp.app.model.mapper.UserViewMapper
+import com.jp.domain.interactor.IGetUsersUseCase
 import javax.inject.Inject
 
-class SampleFragmentViewModel
+class UserFragmentViewModel
 @Inject
-constructor() : BaseFragmentViewModel(), ISampleFragmentViewModel {
+constructor() : BaseFragmentViewModel(), IUserFragmentViewModel {
 
-    private var mLoadGame = MutableLiveData<Boolean>()
+    private var mUsers = MutableLiveData<List<UserView>>()
 
     @Inject
-    lateinit var mGetSampleUseCase: IGetSampleUseCase
+    lateinit var mGetUsersUseCase: IGetUsersUseCase
+
+    @Inject
+    lateinit var mUserViewMapper: UserViewMapper
 
     override fun loadData() {
         addDisposable(
-                mGetSampleUseCase.execute().subscribeSingle(
+                mGetUsersUseCase.execute().subscribeSingle(
                         onStart = {
                             isLoading(true)
                         },
                         onSuccess = {
                             isLoading(false)
-                            mLoadGame.value = true
+                            mUsers.value = mUserViewMapper.transform(it)
                         },
                         onError = { _, _, _ ->
                             isLoading(false)
@@ -32,8 +37,8 @@ constructor() : BaseFragmentViewModel(), ISampleFragmentViewModel {
         )
     }
 
-    override fun loadGame():MutableLiveData<Boolean>{
-       return mLoadGame
+    override fun getUsers(): MutableLiveData<List<UserView>> {
+        return mUsers
     }
 
 }

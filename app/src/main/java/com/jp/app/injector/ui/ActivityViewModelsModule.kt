@@ -1,7 +1,7 @@
 package com.jp.app.injector.ui
 
-import com.jp.app.ui.basicSample.activity.viewModel.ISampleActivityViewModel
-import com.jp.app.ui.basicSample.activity.viewModel.SampleActivityViewModel
+import com.jp.app.ui.basicSample.activity.viewModel.IUserActivityViewModel
+import com.jp.app.ui.basicSample.activity.viewModel.UserActivityViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -18,5 +18,5 @@ abstract class ActivityViewModelsModule {
      * Bind the current Activity View Model
      */
     @Binds
-    internal abstract fun sampleActivityViewModel(viewModel: SampleActivityViewModel): ISampleActivityViewModel
+    internal abstract fun sampleActivityViewModel(viewModel: UserActivityViewModel): IUserActivityViewModel
 }

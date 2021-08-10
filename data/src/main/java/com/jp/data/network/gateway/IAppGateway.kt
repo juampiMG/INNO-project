@@ -1,9 +1,9 @@
 package com.jp.data.network.gateway
 
-import com.jp.data.entity.sample.SampleEntity
+import com.jp.data.entity.sample.User
 import io.reactivex.Single
 
 
 interface IAppGateway {
-    fun getSamples(): Single<SampleEntity>
+    fun getUsers(): Single<List<User>>
 }

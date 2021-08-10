@@ -1,7 +1,7 @@
 package com.jp.app.injector.application
 
-import com.jp.domain.interactor.IGetSampleUseCase
-import com.jp.domain.interactor.impl.GetSampleUseCase
+import com.jp.domain.interactor.IGetUsersUseCase
+import com.jp.domain.interactor.impl.GetUsersUseCase
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -13,5 +13,5 @@ import javax.inject.Singleton
 abstract class UseCaseModule {
     @Binds
     @Singleton
-    internal abstract fun getSampleUseCase(useCase: GetSampleUseCase): IGetSampleUseCase
+    internal abstract fun getSampleUseCase(useCase: GetUsersUseCase): IGetUsersUseCase
 }

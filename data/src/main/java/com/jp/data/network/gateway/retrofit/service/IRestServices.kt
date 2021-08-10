@@ -1,6 +1,6 @@
 package com.jp.data.network.gateway.retrofit.service
 
-import com.jp.data.entity.sample.SampleEntity
+import com.jp.data.entity.sample.User
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Url
@@ -10,5 +10,5 @@ import retrofit2.http.Url
  */
 interface IRestServices {
     @GET
-    fun getSamples(@Url url: String): Single<SampleEntity>
+    fun getUsers(@Url url: String): Single<List<User>>
 }

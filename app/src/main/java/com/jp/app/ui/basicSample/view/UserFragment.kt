@@ -4,20 +4,20 @@ import android.os.Bundle
 import com.jp.app.R
 import com.jp.app.common.view.BaseFragment
 import com.jp.app.common.view.IBaseFragmentCallback
-import com.jp.app.ui.basicSample.viewModel.SampleFragmentViewModel
+import com.jp.app.ui.basicSample.viewModel.UserFragmentViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 /**
  * Basic Fragment
  */
 @AndroidEntryPoint
-class SampleFragment : BaseFragment<SampleFragmentViewModel, SampleFragment.FragmentCallback>() {
+class UserFragment : BaseFragment<UserFragmentViewModel, UserFragment.FragmentCallback>() {
     override fun getLayoutId(): Int {
         return R.layout.sample_fragment
     }
 
     interface FragmentCallback : IBaseFragmentCallback {
-        fun loadFromActivityGame()
+
     }
 
 
@@ -33,13 +33,13 @@ class SampleFragment : BaseFragment<SampleFragmentViewModel, SampleFragment.Frag
     }
 
     override fun subscribeToLiveData() {
-        mViewModel.loadGame().observe(viewLifecycleOwner, {
-            mCallback.loadFromActivityGame()
+        mViewModel.getUsers().observe(viewLifecycleOwner, {
+           var a = true
         })
     }
 
     companion object {
-        fun newInstance(bundle: Bundle?) = SampleFragment().apply {
+        fun newInstance(bundle: Bundle?) = UserFragment().apply {
             arguments = bundle ?: Bundle()
         }
     }

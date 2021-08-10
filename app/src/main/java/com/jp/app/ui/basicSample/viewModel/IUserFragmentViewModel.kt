@@ -2,8 +2,9 @@ package com.jp.app.ui.basicSample.viewModel
 
 import androidx.lifecycle.MutableLiveData
 import com.jp.app.common.viewModel.IBaseActivityViewModel
+import com.jp.app.model.UserView
 
-interface ISampleFragmentViewModel : IBaseActivityViewModel {
+interface IUserFragmentViewModel : IBaseActivityViewModel {
     fun loadData()
-    fun loadGame (): MutableLiveData <Boolean>
+    fun getUsers (): MutableLiveData <List<UserView>>
 }

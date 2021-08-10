@@ -7,7 +7,6 @@ import com.jp.app.BuildConfig
 import com.jp.data.preferences.CredentialsPreferenceManager
 import com.jp.data.preferences.LocalePreferenceManager
 import com.jp.data.preferences.URLPreferenceManager
-import com.jp.data.preferences.UserPreferenceManager
 import com.jp.data.utils.AdvancedPreferences
 
 import dagger.Module
@@ -34,12 +33,6 @@ object PreferencesModule {
     @Singleton
     internal fun advancedPreferences(sharedPreferences: SharedPreferences): AdvancedPreferences {
         return AdvancedPreferences(sharedPreferences)
-    }
-
-    @Provides
-    @Singleton
-    internal fun userPreferenceManager(preferences: AdvancedPreferences): UserPreferenceManager {
-        return UserPreferenceManager(preferences)
     }
 
     @Provides
