@@ -28,7 +28,7 @@ class UserComponent : BaseComponentView {
         name_user.text = n
     }
 
-    fun setBirth (b: DateTime) {
-        birth_user.text = b.toString()
+    fun setBirth (b: String) {
+        birth_user.text = b
     }
 }
