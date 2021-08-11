@@ -31,13 +31,16 @@ ext {
     mockitoVersion = '2.1.0'
 
     assertJAndroidVersion = '1.2.0'
-    androidXTestVersion = '1.1.3'
+    androidXTestVersion = '1.1.0'
     robolectricVersion = '4.4'
     androidXTestCoreVersion = '1.0.0'
     circleIndicatorVersion = '1.2.2'            //https://github.com/ongakuer/CircleIndicator
-
-    // dependencies
-
+    espressoVersion = '3.1.0'
+    espressoIntentsVersion = '2.2.2'
+    espressoIdlingVersion = '3.1.0'
+    espressoContribVersion = '3.3.0-rc01'
+    androidxJUnitVersion = '1.1.2-beta02'
+    uiAutomatorVersion = '2.2.0'
     deps = [
             app : [
                     implementation: [
@@ -65,7 +68,8 @@ ext {
                             "joda-time:joda-time:$jodaTimeVersion",
                             "com.amitshekhar.android:rx2-android-networking:$rx2FastAndroidNetworking",
                             "com.airbnb.android:lottie:$lottieVersion",
-                            "androidx.appcompat:appcompat:$appCompatVersion"
+                            "androidx.appcompat:appcompat:$appCompatVersion",
+                            "androidx.test.espresso:espresso-idling-resource:$espressoIdlingVersion"
                     ],
                     annotationProcessor : [
                     ],
@@ -78,6 +82,16 @@ ext {
                             "org.mockito:mockito-core:$mockitoVersion",
                             "com.squareup.assertj:assertj-android:$assertJAndroidVersion",
                             "com.google.dagger:hilt-android-testing:$ext.hiltVersion"
+                    ],
+                    androidTestImplementation: [
+                            //Espresso & Android Automator
+                            "androidx.test.ext:junit:$androidxJUnitVersion",
+                            "androidx.test.espresso:espresso-core:$espressoVersion",
+                            "androidx.test:rules:$androidXTestVersion",
+                            "androidx.test:runner:$androidXTestVersion",
+                            "androidx.test:core:$androidXTestCoreVersion",
+                            "androidx.test.espresso:espresso-contrib:$espressoContribVersion"
+
                     ],
                     kapt : [
                             "com.github.bumptech.glide:compiler:$glideVersion",

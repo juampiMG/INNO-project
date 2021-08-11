@@ -27,14 +27,17 @@ fun <T : Any> Single<T>.subscribeSingle(
         .subscribeWith(object : BaseSingleObserver<T>() {
             override fun onError(response: Response<*>?, error: String?, code: Int?) {
                 onError(response, error, code)
+                EspressoIdlingResource.decrement()// Espresso Async control
             }
 
             override fun onSuccess(t: T) {
+                EspressoIdlingResource.decrement()// Espresso Async control
                 onSuccess(t)
             }
 
             override fun onStart() {
                 onStart()
+                EspressoIdlingResource.increment() // Espresso Async control
             }
         })
 }
@@ -50,14 +53,17 @@ fun <T : Any> Maybe<T>.subscribeMaybe(
         .subscribeWith(object : BaseMaybeObserver<T>() {
             override fun onError(response: Response<*>?, error: String?, code: Int?) {
                 onError(response, error, code)
+                EspressoIdlingResource.decrement()// Espresso Async control
             }
 
             override fun onSuccess(t: T) {
+                EspressoIdlingResource.decrement()// Espresso Async control
                 onSuccess(t)
             }
 
             override fun onStart() {
                 onStart()
+                EspressoIdlingResource.increment() // Espresso Async control
             }
 
             override fun onComplete() {
@@ -77,13 +83,16 @@ fun Completable.subscribeCompletable(
 
             override fun onError(response: Response<*>?, error: String?, code: Int?) {
                 onError(response, error, code)
+                EspressoIdlingResource.decrement()// Espresso Async control
             }
 
             override fun onStart() {
                 onStart()
+                EspressoIdlingResource.increment() // Espresso Async control
             }
 
             override fun onComplete() {
+                EspressoIdlingResource.decrement()// Espresso Async control
                 onComplete()
             }
         })
