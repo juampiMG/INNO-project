@@ -1,10 +1,12 @@
 package com.jp.app.components
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.util.AttributeSet
 import com.jp.app.R
 import kotlinx.android.synthetic.main.user_component.view.*
 import org.joda.time.DateTime
+import org.joda.time.LocalDateTime
 
 class UserComponent : BaseComponentView {
     override val layoutId: Int
@@ -28,7 +30,10 @@ class UserComponent : BaseComponentView {
         name_user.text = n
     }
 
-    fun setBirth (b: String) {
-        birth_user.text = b
+    @SuppressLint("SetTextI18n")
+    fun setBirth (d: LocalDateTime) {
+        val day = if (d.dayOfMonth().get() >9) d.dayOfMonth().get() else "0${d.dayOfMonth().get()}"
+        val month = if (d.dayOfMonth().get() >9) d.monthOfYear().get() else "0${d.monthOfYear().get()}"
+        birth_user.text = "$day-$month-${d.year().get()}"
     }
 }

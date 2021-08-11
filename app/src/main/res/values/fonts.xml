@@ -7,14 +7,34 @@
         <item name="android:lineSpacingExtra">0sp</item>
     </style>
 
+    <style name="AsapRegular">
+        <item name="android:fontFamily">@font/asap_regular</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:lineSpacingExtra">0sp</item>
+    </style>
+
     <style name="AsapBold.S18">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="AsapBold.S18.DarkGray">
         <item name="android:textColor">@color/dark_gray</item>
-        <item name="android:textSize">19sp</item>
     </style>
 
     <style name="AsapBold.S18.Cyan">
         <item name="android:textColor">@color/cyan</item>
-        <item name="android:textSize">19sp</item>
+    </style>
+
+    <style name="AsapBold.S18.Black">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="AsapRegular.S14">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="AsapRegular.S14.DarkGray">
+        <item name="android:textColor">@color/dark_gray</item>
     </style>
 
 </resources>

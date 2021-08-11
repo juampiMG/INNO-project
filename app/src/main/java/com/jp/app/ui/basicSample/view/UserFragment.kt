@@ -1,7 +1,10 @@
 package com.jp.app.ui.basicSample.view
 
+import android.content.Context
 import android.os.Bundle
 import android.view.View
+import android.view.animation.AnimationUtils
+import android.view.animation.LayoutAnimationController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.jp.app.R
 import com.jp.app.common.view.BaseFragment
@@ -9,7 +12,7 @@ import com.jp.app.common.view.IBaseFragmentCallback
 import com.jp.app.ui.basicSample.adapter.UserResponseAdapter
 import com.jp.app.ui.basicSample.viewModel.UserFragmentViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.sample_fragment.*
+import kotlinx.android.synthetic.main.user_fragment.*
 
 /**
  * Basic Fragment
@@ -20,7 +23,7 @@ class UserFragment : BaseFragment<UserFragmentViewModel, UserFragment.FragmentCa
     lateinit var mAdapter: UserResponseAdapter
 
     override fun getLayoutId(): Int {
-        return R.layout.sample_fragment
+        return R.layout.user_fragment
     }
 
     interface FragmentCallback : IBaseFragmentCallback
@@ -37,21 +40,13 @@ class UserFragment : BaseFragment<UserFragmentViewModel, UserFragment.FragmentCa
         }
     }
 
-    override fun onViewLoaded(savedInstanceState: Bundle?, view: View?) {
-        super.onViewLoaded(savedInstanceState, view)
-        setUpRecyclerView ()
-    }
-
-    private fun setUpRecyclerView() {
-       val mLinearLayoutManager = LinearLayoutManager(activity)
-        response_server.layoutManager = mLinearLayoutManager
-        mAdapter = UserResponseAdapter(mutableListOf())
-        response_server.adapter = mAdapter
-    }
-
     override fun subscribeToLiveData() {
         mViewModel.getUsers().observe(viewLifecycleOwner, {
-            mAdapter.setUpResponse(it)
+            if (it.isNotEmpty()) {
+                runLayoutAnimation()
+                mAdapter.setUpResponse(it)
+            }
+
         })
     }
 
@@ -62,10 +57,24 @@ class UserFragment : BaseFragment<UserFragmentViewModel, UserFragment.FragmentCa
     }
 
     override fun setUpViews() {
-
+        setUpRecyclerView ()
     }
 
     override fun applyRTLChanges() {
+    }
+
+    private fun setUpRecyclerView() {
+        val mLinearLayoutManager = LinearLayoutManager(activity)
+        response_server.layoutManager = mLinearLayoutManager
+        mAdapter = UserResponseAdapter(mutableListOf())
+        response_server.adapter = mAdapter
+    }
+
+    private fun runLayoutAnimation() {
+        val context: Context = response_server.context
+        val controller: LayoutAnimationController = AnimationUtils.loadLayoutAnimation(context, R.anim.layout_animation_fall_down)
+        response_server.layoutAnimation = controller
+        response_server.scheduleLayoutAnimation()
     }
 
 

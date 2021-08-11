@@ -5,7 +5,6 @@ ext {
     servicesVersion = '17.0.0'
     multidexVersion = '2.0.0'               // https://developer.android.com/jetpack/androidx/migrate
     constraintsLayoutVersion = '2.0.0-beta3'      // https://developer.android.com/jetpack/androidx/migrate
-    daggerVersion = '2.22.1'                // https://github.com/google/dagger
     hiltViewModelVersion = '1.0.0-alpha01'
     androidxLifecycleVersion = '2.2.0'
     androidxActivityVersion = '1.2.0-alpha04'
@@ -29,7 +28,6 @@ ext {
     // Testing
     jUnitVersion = '4.12'
     assertJVersion = '1.7.0'
-    robolectricVersion = '4.2'
     mockitoVersion = '2.1.0'
 
     assertJAndroidVersion = '1.2.0'
@@ -50,7 +48,6 @@ ext {
                             "androidx.fragment:fragment-ktx:$androidxFragmentVersion",
                             "com.google.dagger:hilt-android:$ext.hiltVersion",
                             "androidx.hilt:hilt-lifecycle-viewmodel:$hiltViewModelVersion",
-                            "com.google.dagger:dagger-android-support:$daggerVersion",
                             "androidx.lifecycle:lifecycle-extensions:$androidxLifecycleVersion",
                             "com.squareup.retrofit2:retrofit:$retrofitVersion",
                             "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion",
@@ -76,15 +73,11 @@ ext {
                     testImplementation : [
                             "junit:junit:$jUnitVersion",
                             "org.mockito:mockito-core:$mockitoVersion",
-                            "org.robolectric:robolectric:$robolectricVersion",
                             "com.squareup.assertj:assertj-android:$assertJAndroidVersion",
-                            "com.google.dagger:dagger-android-support:$daggerVersion",
                             "com.google.dagger:hilt-android-testing:$ext.hiltVersion"
                     ],
                     kapt : [
                             "com.github.bumptech.glide:compiler:$glideVersion",
-                            "com.google.dagger:dagger-compiler:$daggerVersion",
-                            "com.google.dagger:dagger-android-processor:$daggerVersion",
                             "com.google.dagger:hilt-compiler:$ext.hiltVersion",
                             "androidx.hilt:hilt-compiler:$hiltViewModelVersion"
                     ]
@@ -93,11 +86,9 @@ ext {
                     implementation: [
                             "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$ext.kotlinVersion",
                           //  "org.parceler:parceler-api:$parcelerVersion",
-                            "com.google.dagger:dagger-android-support:$daggerVersion",
                             "com.google.dagger:hilt-android:$ext.hiltVersion",
                             "io.reactivex.rxjava2:rxandroid:$reactiveAndroidVersion",
                             "io.reactivex.rxjava2:rxkotlin:${reactiveKotlinVersion}",
-                            "joda-time:joda-time:$jodaTimeVersion",
                             "org.modelmapper:modelmapper:$modelmapperVersion"
                     ],
                     implementationTransitive : [
@@ -110,16 +101,12 @@ ext {
                     testImplementation : [
                             "junit:junit:$jUnitVersion",
                             "org.mockito:mockito-core:$mockitoVersion",
-                            "org.robolectric:robolectric:$robolectricVersion",
                             "androidx.test:rules:$androidXTestVersion",
                             "androidx.test:runner:$androidXTestVersion",
                             "androidx.test:core:$androidXTestCoreVersion",
-                            "com.squareup.assertj:assertj-android:$assertJAndroidVersion",
-                            "com.google.dagger:dagger-compiler:$daggerVersion"
+                            "com.squareup.assertj:assertj-android:$assertJAndroidVersion"
                     ],
                     kapt : [
-                            "com.google.dagger:dagger-compiler:$daggerVersion",
-                            "com.google.dagger:dagger-android-processor:$daggerVersion",
                             "com.google.dagger:hilt-compiler:$ext.hiltVersion"
                     ]
             ],
@@ -127,7 +114,6 @@ ext {
                     implementation: [
                             "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$ext.kotlinVersion",
                             "com.google.android.gms:play-services-gcm:$servicesVersion",
-                            "com.google.dagger:dagger-android-support:$daggerVersion",
                             "com.google.dagger:hilt-android:$ext.hiltVersion",
                             "com.squareup.retrofit2:retrofit:$retrofitVersion",
                             "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion",
@@ -140,8 +126,7 @@ ext {
                             "io.reactivex.rxjava2:rxkotlin:${reactiveKotlinVersion}",
                             "org.glassfish:javax.annotation:$javaxAnnotationVersion",
                             "org.modelmapper:modelmapper:$modelmapperVersion",
-                            "com.amitshekhar.android:rx2-android-networking:$rx2FastAndroidNetworking",
-                            "joda-time:joda-time:$jodaTimeVersion"
+                            "com.amitshekhar.android:rx2-android-networking:$rx2FastAndroidNetworking"
                     ],
                     implementationTransitive : [
 
@@ -153,8 +138,6 @@ ext {
                     testImplementation : [
                     ],
                     kapt : [
-                            "com.google.dagger:dagger-compiler:$daggerVersion",
-                            "com.google.dagger:dagger-android-processor:$daggerVersion",
                             "com.google.dagger:hilt-compiler:$ext.hiltVersion"
                     ]
             ]

@@ -17,11 +17,6 @@ import com.jp.app.helper.DialogHelper
 import com.jp.app.helper.NavigationHelper
 import com.jp.app.model.AlertDialogModel
 import com.jp.app.utils.NavigationUtils
-import dagger.android.AndroidInjection
-import dagger.android.AndroidInjector
-import dagger.android.DispatchingAndroidInjector
-import dagger.android.support.HasSupportFragmentInjector
-import dagger.hilt.android.AndroidEntryPoint
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import kotlinx.android.synthetic.main.generic_loading.*

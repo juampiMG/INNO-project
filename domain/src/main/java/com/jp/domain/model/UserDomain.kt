@@ -1,6 +1,5 @@
 package com.jp.domain.model
 
-import org.joda.time.DateTime
 import java.util.*
 
 class UserDomain {
