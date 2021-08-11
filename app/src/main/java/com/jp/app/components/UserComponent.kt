@@ -33,7 +33,7 @@ class UserComponent : BaseComponentView {
     @SuppressLint("SetTextI18n")
     fun setBirth (d: LocalDateTime) {
         val day = if (d.dayOfMonth().get() >9) d.dayOfMonth().get() else "0${d.dayOfMonth().get()}"
-        val month = if (d.dayOfMonth().get() >9) d.monthOfYear().get() else "0${d.monthOfYear().get()}"
+        val month = if (d.monthOfYear().get() >9) d.monthOfYear().get() else "0${d.monthOfYear().get()}"
         birth_user.text = "$day-$month-${d.year().get()}"
     }
 }
