@@ -32,6 +32,7 @@ constructor() : BaseFragmentViewModel(), IUserFragmentViewModel {
                         },
                         onError = { _, _, _ ->
                             isLoading(false)
+                            showDisplayServerErrorToast()
                         }
                 )
         )

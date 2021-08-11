@@ -3,6 +3,7 @@ package com.jp.app.injector.base
 import android.os.Bundle
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
+import com.jp.app.common.reactivex.CompositeDisposableManager
 import com.jp.app.helper.DialogHelper
 import com.jp.app.helper.NavigationHelper
 import dagger.Module
@@ -35,6 +36,11 @@ object BaseActivityModule {
     @Provides
     internal fun navigationHelper(activity: FragmentActivity, extras: Bundle): NavigationHelper {
         return NavigationHelper(activity, extras)
+    }
+
+    @Provides
+    internal fun compositeDisposableManager(): CompositeDisposableManager {
+        return CompositeDisposableManager()
     }
 
 }

@@ -4,6 +4,7 @@ import android.app.Activity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
+import com.jp.app.common.reactivex.CompositeDisposableManager
 import com.jp.app.helper.DialogHelper
 import dagger.Module
 import dagger.Provides
@@ -44,6 +45,12 @@ object BaseFragmentModule {
         @Named(CHILD_FRAGMENT_MANAGER) fragmentManager: FragmentManager
     ): DialogHelper {
         return DialogHelper(activity, fragmentManager)
+    }
+
+    @Provides
+    @Named(FRAGMENT)
+    internal fun compositeDisposableManager(): CompositeDisposableManager {
+        return CompositeDisposableManager()
     }
 
 }

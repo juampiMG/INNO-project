@@ -30,8 +30,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appCompatTextView" />
 
-    <include
-        android:id="@+id/include"
-        layout="@layout/generic_loading" />
+    <include layout="@layout/generic_loading"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
