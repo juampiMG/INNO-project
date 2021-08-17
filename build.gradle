@@ -31,7 +31,7 @@ allprojects {
         androidVersionCode = VERSION_CODE as int
         androidVersionName = VERSION_NAME as String
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        testApplicationId = 'test.com.jp'
+        testApplicationId = 'test.com.jp.app'
     }
 
     plugins.withId("kotlin-kapt") {
